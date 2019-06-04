@@ -14,12 +14,16 @@ public class TestWebApplication {
         webDriver.get("https://www.testandquiz.com/selenium/testing.html");
 
         WebApplication webApplication = new WebApplication(webDriver);
+        CheckBoxAndRadioButton checkBoxAndRadioButton = new CheckBoxAndRadioButton(webDriver);
 
         webDriver.findElement(By.xpath("//*[text()='This is a link']")).click();
         webDriver.navigate().back();
 
         webApplication.inputText("id,jgfx ");
         webApplication.submitClick();
+
+        checkBoxAndRadioButton.clickRadioButton();
+        checkBoxAndRadioButton.clickCheckBox();
 
 
 

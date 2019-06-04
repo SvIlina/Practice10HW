@@ -16,9 +16,6 @@ public class WebApplication {
     @FindBy(id = "idOfButton")
     private WebElement submitButton;
 
-    private By radioButton = By.id("male");
-    private By checkBox =  By.xpath("//input[@class='Performance']");
-
     WebApplication(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
@@ -31,9 +28,7 @@ public class WebApplication {
         submitButton.click();
     }
 
-    public void clickRadioButton () {
 
-    }
 
 
 }
