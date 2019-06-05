@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WebApplication {
 
+
     //Find Text Box
     @FindBy(id = "fname")
     private WebElement textBox;
@@ -16,8 +17,14 @@ public class WebApplication {
     @FindBy(id = "idOfButton")
     private WebElement submitButton;
 
+    private By radioButton = By.id("male");
+    private By checkBox = By.xpath("//input[@class='Performance']");
+
+    private final WebDriver driver;
+
     WebApplication(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
+        driver = webDriver;
     }
 
     public void inputText(String text) {
@@ -29,6 +36,12 @@ public class WebApplication {
     }
 
 
+    public void clickRadioButton() {
+        driver.findElement(radioButton).click();
+    }
 
+    public void clickCheckBox() {
+        driver.findElement(checkBox).click();
+    }
 
 }
